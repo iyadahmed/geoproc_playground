@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#pragma pack(1)
+#pragma pack(push, 1)
 struct STLBinaryTriangle
 {
     float normal[3];
@@ -19,5 +19,6 @@ struct STLBinaryTriangle
     };
     uint16_t attribute_byte_count;
 };
+#pragma pack(pop)
 
 int load_stl(FILE *file, struct STLBinaryTriangle **triangles, uint32_t *num_triangles);
